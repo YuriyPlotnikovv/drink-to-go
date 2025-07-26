@@ -1,0 +1,31 @@
+.actions {
+
+}
+
+.actions__item {
+
+}
+
+.actions__item-link {
+  padding: 10px 12px;
+}
+
+.actions__item-icon {
+
+}
+
+.actions__item-caption {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    display: block;
+
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+}
+
+.actions__item-menu-button {
+
+}

@@ -1,0 +1,28 @@
+.menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+
+  display: none;
+  width: 100%;
+  padding: 30px 20px;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+  }
+}
+
+.menu__item {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: $base-text-color;
+
+  &--active {
+    color: $accent-text-color;
+  }
+}
+
+.menu__item-link {
+  padding: 20px 15px;
+}

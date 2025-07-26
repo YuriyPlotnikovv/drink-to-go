@@ -1,0 +1,23 @@
+.header {
+  position: relative;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.header__logo {
+  transition: opacity 0.4s ease-in-out;
+
+  &:hover,
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.header__nav {
+  display: contents;
+}

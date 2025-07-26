@@ -1,0 +1,137 @@
+.range {
+  width: 330px;
+  margin: 0 auto;
+}
+
+.fieldset__legend {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.range__track {
+  position: relative;
+  height: 4px;
+  margin: 0 0 30px 0;
+  background: #e1e1ef;
+  border-radius: 2px;
+}
+
+.range__slider {
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  height: 32px;
+  top: -15px;
+  background: none;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.range__slider::-webkit-slider-thumb {
+  pointer-events: all;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #a78bfa;
+  box-shadow: 0 1px 6px rgba(167,139,250,0.15);
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+.range__slider:focus::-webkit-slider-thumb {
+  outline: 2px solid #a78bfa;
+}
+
+.range__slider::-moz-range-thumb {
+  pointer-events: all;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #a78bfa;
+  box-shadow: 0 1px 6px rgba(167,139,250,0.15);
+  cursor: pointer;
+}
+
+.range__slider:focus::-moz-range-thumb {
+  outline: 2px solid #a78bfa;
+}
+
+.range__slider::-ms-thumb {
+  pointer-events: all;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #a78bfa;
+  box-shadow: 0 1px 6px rgba(167,139,250,0.15);
+  cursor: pointer;
+}
+
+.range__slider:focus::-ms-thumb {
+  outline: 2px solid #a78bfa;
+}
+
+.range__slider--min {
+  z-index: 3;
+}
+
+.range__slider--max {
+  z-index: 4;
+}
+
+.range__slider::-webkit-slider-runnable-track {
+  height: 4px;
+  background: none;
+}
+.range__slider::-ms-fill-upper,
+.range__slider::-ms-fill-lower {
+  background: none;
+}
+.range__slider::-moz-range-track {
+  background: none;
+  height: 4px;
+}
+
+.range__track {
+  position: relative;
+}
+.range__track::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  background: #a78bfa;
+  left: var(--min, 0%);
+  right: calc(100% - var(--max, 100%));
+  top: 0;
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.range__values {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.range__values span {
+  width: 70px;
+  padding: 10px 0;
+  border: 2px solid #a78bfa;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 1.2rem;
+  background: #fff;
+  color: #454545;
+  box-sizing: border-box;
+  font-variant-numeric: tabular-nums;
+}
+
+.range__values span:first-child {
+  color: #bcbcbc;
+}
