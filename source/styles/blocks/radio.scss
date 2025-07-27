@@ -1,65 +1,86 @@
 .radio {
+  position: relative;
+
   display: flex;
   align-items: center;
-  font-size: 1.2rem;
+
   cursor: pointer;
-  margin-bottom: 18px;
   user-select: none;
-  position: relative;
-  color: #232323;
+
+  &:hover,
+  &:active {
+    .radio__field-custom {
+      border-color: $accent-bg;
+    }
+  }
+
+  &:focus-within {
+    border-radius: 1px;
+    outline: 2px solid;
+    outline-offset: 5px;
+  }
 }
 
 .radio__field {
   appearance: none;
-  position: absolute;
-  width: 1px; height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
 
   &:checked + .radio__field-custom {
-    border-color: #a78bfa;
+    border-color: $accent-bg;
   }
 
   &:checked + .radio__field-custom::after {
-    content: "";
     position: absolute;
-    left: 6px; top: 6px;
-    width: 10px; height: 10px;
-    border-radius: 50%;
-    background: #a78bfa;
+    top: 50%;
+    left: 50%;
+
     display: block;
+    width: 16px;
+    height: 16px;
+
+    background-color: $accent-bg;
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+
+    content: "";
   }
 
   &:disabled + .radio__field-custom {
-    border-color: #e5e5e5;
-    background: #f5f5f5;
+    background-color: $base-bg;
+    border-color: $inactive-bg;
+
     cursor: default;
   }
 
   &:disabled ~ .radio__label {
-    color: #cccccc;
+    color: $add-text-color;
   }
 
   &:disabled + .radio__field-custom::after {
-    background: #cccccc;
+    background-color: $inactive-bg;
   }
 }
 
 .radio__field-custom {
-  display: inline-block;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 3px solid #a78bfa;
-  margin-right: 16px;
-  box-sizing: border-box;
   position: relative;
-  background: #fff;
-  transition: border-color .2s;
+
+  display: inline-block;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+
+  background-color: $base-bg;
+  border: 2px solid $non-select-bg;
+  border-radius: 50%;
+
+  transition: border-color 0.2s ease-in-out;
 }
 
 .radio__label {
-  font-size: 1.2rem;
-  color: #232323;
-  transition: color .2s;
+  font-size: 16px;
+  line-height: 1.5;
+
+  transition: color 0.2s ease-in-out;
 }

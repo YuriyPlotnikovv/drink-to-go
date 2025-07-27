@@ -1,89 +1,99 @@
-const sortBtn = document.getElementById('sortBtn');
-const sortList = document.getElementById('sortList');
-const sortOptions = sortList.querySelectorAll('.sort__option');
-const currentText = sortBtn.querySelector('span');
+const OPTION_SELECTED_CLASS = 'sort__option--selected';
 
-let selectedOptionIdx = Array.from(sortOptions).findIndex(opt =>
-  opt.classList.contains('sort__option--selected')
-);
+const sortContainer = document.querySelector('.sort');
 
-function openSort() {
-  sortList.hidden = false;
-  sortBtn.setAttribute('aria-expanded', 'true');
-  sortOptions[selectedOptionIdx].focus();
-}
-function closeSort() {
+const initSort = (container) => {
+  const sortButton = container.querySelector('.sort__current');
+  const sortList = container.querySelector('.sort__list');
+  const sortOptions = sortList.querySelectorAll('.sort__option');
+
+  let selectedOptionIndex = Array.from(sortOptions).findIndex((option) =>
+    option.classList.contains(OPTION_SELECTED_CLASS)
+  );
+
+  const openSort = () => {
+    sortList.hidden = false;
+    sortButton.setAttribute('aria-expanded', 'true');
+    sortOptions[selectedOptionIndex].focus();
+  };
+
+  const closeSort = () => {
+    sortList.hidden = true;
+    sortButton.setAttribute('aria-expanded', 'false');
+  };
+
+  const updateSelected = (index) => {
+    sortOptions.forEach((option, i) => {
+      option.setAttribute('aria-selected', i === index);
+      option.classList.toggle(OPTION_SELECTED_CLASS, i === index);
+    });
+
+    selectedOptionIndex = index;
+    sortButton.childNodes[0].nodeValue = `${sortOptions[index].textContent} `;
+  };
+
+  sortButton.addEventListener('click', () => {
+    if (sortList.hidden) {
+      openSort();
+    } else {
+      closeSort();
+    }
+  });
+
+  sortButton.addEventListener('keydown', (evt) => {
+    if (['Enter', ' ', 'ArrowDown', 'ArrowUp'].includes(evt.key)) {
+      evt.preventDefault();
+      openSort();
+    }
+  });
+
+  sortOptions.forEach((option, index) => {
+    option.tabIndex = -1;
+
+    option.addEventListener('click', () => {
+      updateSelected(index);
+      closeSort();
+    });
+
+    option.addEventListener('keydown', (evt) => {
+      let nextIndex;
+
+      switch (evt.key) {
+        case 'ArrowDown':
+          evt.preventDefault();
+          nextIndex = (index + 1) % sortOptions.length;
+          sortOptions[nextIndex].focus();
+          break;
+        case 'ArrowUp':
+          evt.preventDefault();
+          nextIndex = (index - 1 + sortOptions.length) % sortOptions.length;
+          sortOptions[nextIndex].focus();
+          break;
+        case 'Home':
+          evt.preventDefault();
+          sortOptions[0].focus();
+          break;
+        case 'End':
+          evt.preventDefault();
+          sortOptions[sortOptions.length - 1].focus();
+          break;
+        case 'Enter':
+        case ' ':
+          evt.preventDefault();
+          updateSelected(index);
+          closeSort();
+          break;
+        case 'Escape':
+          closeSort();
+          break;
+      }
+    });
+  });
+
   sortList.hidden = true;
-  sortBtn.setAttribute('aria-expanded', 'false');
-  sortBtn.focus();
+  updateSelected(selectedOptionIndex);
+};
+
+if (sortContainer) {
+  initSort(sortContainer);
 }
-function updateSelected(idx) {
-  sortOptions.forEach((opt, i) => {
-    opt.setAttribute('aria-selected', i === idx ? 'true' : 'false');
-    opt.classList.toggle('sort__option--selected', i === idx);
-  });
-  selectedOptionIdx = idx;
-  currentText.textContent = sortOptions[idx].textContent;
-}
-
-sortBtn.addEventListener('click', (e) => {
-  if(sortList.hidden) {
-    openSort();
-  } else {
-    closeSort();
-  }
-});
-
-sortBtn.addEventListener('keydown', (e) => {
-  if (["Enter", " ", "ArrowDown", "ArrowUp"].includes(e.key)) {
-    e.preventDefault();
-    openSort();
-  }
-});
-
-sortOptions.forEach((option, idx) => {
-  option.addEventListener('click', (e) => {
-    updateSelected(idx);
-    closeSort();
-    // сюда вставить обработчик сортировки по option.dataset.value
-  });
-  option.addEventListener('keydown', (e) => {
-    if(e.key === "ArrowDown") {
-      e.preventDefault();
-      let nextIdx = (idx + 1) % sortOptions.length;
-      sortOptions[nextIdx].focus();
-    } else if(e.key === "ArrowUp") {
-      e.preventDefault();
-      let prevIdx = (idx - 1 + sortOptions.length) % sortOptions.length;
-      sortOptions[prevIdx].focus();
-    } else if(e.key === "Home") {
-      e.preventDefault();
-      sortOptions[0].focus();
-    } else if(e.key === "End") {
-      e.preventDefault();
-      sortOptions[sortOptions.length - 1].focus();
-    } else if(e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      updateSelected(idx);
-      closeSort();
-    } else if(e.key === "Escape") {
-      closeSort();
-    }
-  });
-});
-
-// Клик вне селекта — закрыть
-document.addEventListener('mousedown', e => {
-  if(!e.target.closest('.catalog__sort')) {
-    closeSort();
-  }
-});
-
-// Tab — закрытие списка
-sortList.addEventListener('focusout', e => {
-  setTimeout(() => {
-    if(!sortList.contains(document.activeElement)) {
-      closeSort();
-    }
-  }, 10);
-});

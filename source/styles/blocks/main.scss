@@ -1,11 +1,14 @@
-.main {
-
-}
-
-.main__section {
-
-}
-
 .main__title {
+  margin-bottom: 6px;
 
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 20px;
+
+    font-size: 42px;
+  }
 }

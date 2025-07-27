@@ -1,64 +1,85 @@
 .toggle {
+  position: relative;
+
   display: flex;
   align-items: center;
-  font-size: 1.2rem;
+
   cursor: pointer;
-  margin-bottom: 18px;
   user-select: none;
-  position: relative;
+
+  &:hover,
+  &:active {
+    .toggle__field-custom {
+      background-color: $accent-bg;
+    }
+  }
+
+  &:focus-within {
+    border-radius: 1px;
+    outline: 2px solid;
+    outline-offset: 5px;
+  }
 }
 
 .toggle__field {
   appearance: none;
-  position: absolute;
-  width: 1px; height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
 
   &:checked + .toggle__field-custom {
-    background: #a78bfa;
+    background-color: $accent-bg;
   }
 
   &:checked + .toggle__field-custom::before {
     left: 20px;
   }
 
-  &:disabled + .toggle__field-custom,
+  &:disabled + .toggle__field-custom {
+    background-color: $inactive-bg;
+  }
+
   &:disabled + .toggle__field-custom::before {
-    background: #f5f5f5;
+    background-color: $base-bg;
+
     cursor: default;
   }
 
   &:disabled ~ .toggle__label {
-    color: #cccccc;
+    color: $add-text-color;
   }
 }
 
 .toggle__field-custom {
   position: relative;
+
   display: inline-block;
-  width: 46px;
-  height: 28px;
-  margin-right: 16px;
-  border-radius: 14px;
-  background: #e5e5e5;
-  transition: background 0.2s;
-  vertical-align: middle;
+  flex-shrink: 0;
+  width: 42px;
+  height: 24px;
+  margin-right: 10px;
+
+  background: $non-select-bg;
+  border-radius: 12px;
+
+  transition: background 0.2s ease-in-out;
 
   &::before {
-    content: "";
     position: absolute;
-    top: 2px; left: 2px;
-    width: 24px; height: 24px;
-    background: #fff;
+    top: 2px;
+    left: 2px;
+
+    width: 20px;
+    height: 20px;
+
+    background-color: $base-bg;
     border-radius: 50%;
-    box-shadow: 0 1px 4px rgba(167, 139, 250, 0.02);
+
     transition: left 0.2s;
+
+    content: "";
   }
 }
 
 .toggle__label {
-  font-size: 1.2rem;
-  color: #232323;
-  transition: color .2s;
+  font-size: 16px;
+  line-height: 1.5;
+  transition: color 0.2s ease-in-out;
 }

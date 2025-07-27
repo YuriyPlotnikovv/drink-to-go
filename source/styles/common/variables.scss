@@ -1,5 +1,5 @@
 // fonts
-$font-main: "Montserrat", Arial, sans-serif;
+$font-main: "Montserrat", "Arial", sans-serif;
 
 // media widths
 $mobile-width: 320px;
@@ -10,12 +10,22 @@ $desktop-width: 1440px;
 $base-text-color: #333333;
 $bg-text-color: #ffffff;
 $accent-text-color: #7859cf;
+$add-text-color: #bdbdbd;
 
 $base-bg: #ffffff;
 $add-bg: #f8f8f8;
 $accent-bg: #7859cf;
+$accent-light-bg: #f0ebff;
 $light-bg: #f3ebe1;
+$inactive-bg: #e2e2e2;
+$range-accent-bg: #9070ec;
+$non-select-bg: #bdbdbd;
+$social-icon-bg: #bdbdbd;
 
 // gradients
+$slider-gradient: linear-gradient(to bottom, $light-bg 77%, $base-bg 23%);
+$window-gradient: linear-gradient(310deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 107, 1) 0%, rgba(0, 0, 0, 1) 80%);
 
 // shadows
+$cardShadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+$menuShadow: 0 20px 15px 0 rgba(0, 0, 0, 0.15);

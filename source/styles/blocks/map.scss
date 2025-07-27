@@ -1,11 +1,32 @@
 .map {
+  width: 100%;
+  height: 420px;
 
+  background-color: $add-bg;
+
+  scroll-margin-top: 150px;
+
+  @media (min-width: $tablet-width) {
+    height: 480px;
+
+    scroll-margin-top: 200px;
+  }
+
+  @media (min-width: $desktop-width) {
+    height: 540px;
+
+    scroll-margin-top: 250px;
+  }
 }
 
-.map__picture {
-
+.map__wrapper {
+  width: 100%;
+  height: 100%;
 }
 
 .map__image {
+  width: 100%;
+  height: 100%;
 
+  object-fit: cover;
 }

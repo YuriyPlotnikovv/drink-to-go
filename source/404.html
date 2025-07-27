@@ -2,16 +2,39 @@
 <html class="page" lang="ru">
   <head>
     <meta charset="UTF-8">
-    <title>404</title>
+    <title>Страница не найдена | Drink2Go — интернет-магазин кофейных напитков</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="preload" href="fonts/Montserrat-Variable.woff2" type="font/woff2" as="font">
+    <link rel="preload" href="fonts/Montserrat-Italic-Variable.woff2" type="font/woff2" as="font">
+
+    <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Drink2Go">
+    <link rel="manifest" href="site.webmanifest">
+
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="preload" href="#" type="font/woff2" as="font">
+
     <script src="scripts/index.js" defer></script>
   </head>
+
   <body class="page__body">
     <main>
-      <h1>404</h1>
-      <p>Страница не найдена. <a href="/">Перейти на главную</a>.</p>
+      <section class="page__not-found not-found no-js">
+        <div class="not-found__text-wrapper">
+          <h1 class="not-found__title">404</h1>
+
+          <p class="not-found__text">Страница затерялась в космосе</p>
+          <a class="not-found__link button button--color" href="/">Перейти на главную</a>
+        </div>
+
+        <div class="not-found__window-wrapper">
+          <div class="not-found__window">
+            <div class="not-found__stars"></div>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>

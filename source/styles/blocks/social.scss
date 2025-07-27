@@ -1,15 +1,28 @@
 .social {
-
-}
-
-.social__item {
-
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 20px;
 }
 
 .social__item-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 
+  &:hover,
+  &:active {
+    .social__item-icon {
+      fill: $accent-bg;
+    }
+  }
 }
 
 .social__item-icon {
+  width: 20px;
+  height: 20px;
 
+  transition: 0.4s ease-in-out;
+
+  fill: $social-icon-bg;
 }

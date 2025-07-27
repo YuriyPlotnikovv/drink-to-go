@@ -1,11 +1,41 @@
 .copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 20px 20px 30px;
 
+  font-size: 12px;
+  color: $add-text-color;
+
+  @media (min-width: $tablet-width) {
+    padding: 30px 40px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 20px 40px 40px;
+  }
 }
 
-.copyright__text {
+.copyright__link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 
+  transition: 0.4s ease-in-out;
+
+  &:hover,
+  &:active {
+    color: $accent-text-color;
+
+    .copyright__icon {
+      fill: $accent-bg;
+    }
+  }
 }
 
 .copyright__icon {
+  transition: 0.4s ease-in-out;
 
+  fill: $add-text-color;
 }

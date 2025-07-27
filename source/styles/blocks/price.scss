@@ -1,14 +1,21 @@
 .price {
-
+  display: flex;
+  align-items: center;
 }
 
-.price__value {
+.price__value-old {
+  margin-right: 6px;
 
-  &--old {
-
-  }
+  font-size: 16px;
+  line-height: 2;
+  text-decoration: line-through;
+  color: $accent-text-color;
 }
 
-.price__buy-button {
+.price__value-current {
+  margin-right: 20px;
 
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.6;
 }

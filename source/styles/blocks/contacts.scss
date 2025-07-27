@@ -1,11 +1,32 @@
 .contacts {
-
-}
-
-.contacts__item {
-
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
 }
 
 .contacts__item-link {
+  display: flex;
+  gap: 6px;
 
+  transition: opacity 0.4s ease-in-out;
+
+  &:hover,
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.contacts__item-icon {
+  flex-shrink: 0;
+  width: 13px;
+  height: 16px;
+
+  fill: $accent-bg;
+}
+
+.contacts__item-text {
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1.4;
 }

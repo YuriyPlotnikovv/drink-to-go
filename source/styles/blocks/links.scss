@@ -1,11 +1,24 @@
-.link {
-
-}
-
-.link__item {
-
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
 
 .links__item-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 8px 0;
 
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  transition: opacity 0.4s ease-in-out;
+
+  &:hover,
+  &:active {
+    opacity: 0.6;
+  }
 }

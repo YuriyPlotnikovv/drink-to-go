@@ -1,39 +1,100 @@
 .card {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px 20px;
 
+  background-color: $base-bg;
+  border-radius: 4px;
+
+  @media (min-width: $tablet-width) {
+    padding: 50px 30px 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    transition: 0.4s ease-in-out;
+
+    &:hover,
+    &:active {
+      box-shadow: $cardShadow;
+    }
+  }
 }
 
-.card__picture {
+.card__picture-link {
+  align-self: center;
+  margin-bottom: 28px;
 
+  @media (min-width: $tablet-width) {
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 32px;
+  }
 }
 
 .card__image {
+  width: auto;
+  height: 188px;
 
-}
-
-.card__content {
-
+  object-fit: contain;
 }
 
 .card__title {
+  margin-bottom: 8px;
 
+  font-size: 18px;
+  font-weight: 700;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 10px;
+
+    font-size: 24px;
+  }
 }
 
 .card__description {
+  margin-bottom: 16px;
 
+  font-size: 14px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 20px;
+  }
 }
 
 .card__price {
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 }
 
 .card__price-value {
-
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.6;
 }
 
 .card__price-button {
+  gap: 6px;
 
+  font-size: 14px;
+
+  fill: $base-bg;
+
+  &:hover,
+  &:active {
+    .card__price-icon {
+      fill: $accent-bg;
+    }
+  }
 }
 
 .card__price-icon {
+  display: block;
+  width: 20px;
+  height: 16px;
 
+  transition: 0.4s ease-in-out;
 }
