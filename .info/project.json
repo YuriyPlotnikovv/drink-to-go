@@ -3,9 +3,9 @@
   "title-ru": "Drink2Go",
   "title-en": "Drink2Go",
   "textFirst-ru": "Экзаменационный проект на HTML, CSS и JS",
-  "textFirst-en": "",
+  "textFirst-en": "Exam project using HTML, CSS, and JS",
   "textSecond-ru": "Экзаменационный учебный проект, разработан в рамках курса Frontend-разработчик от HTML Academy. Проект на реализацию страницы сайта согласно макету.",
-  "textSecond-en": "",
+  "textSecond-en": "Exam training project developed as part of the 'Frontend Developer' course by HTML Academy. The project implements a website page according to the provided design.",
   "deploy": "https://drink-to-go-training.netlify.app/",
   "features": [
     {
@@ -39,7 +39,11 @@
         "Сборка и оптимизация через Gulp"
       ],
       "description-en": [
-        "Favorites list"
+        "Responsive layout for mobile, tablet, and desktop",
+        "Swiper slider",
+        "Interactive Leaflet map",
+        "Custom form elements and select",
+        "Build and optimization with Gulp"
       ]
     },
     {
@@ -51,7 +55,9 @@
         "Получение ассортимента с сервера"
       ],
       "description-en": [
-        ""
+        "Inner pages",
+        "Data processing and user interaction",
+        "Fetching products from server"
       ]
     }
   ],
