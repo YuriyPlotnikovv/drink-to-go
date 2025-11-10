@@ -1,81 +1,60 @@
 {
-  "id": 13,
-  "title-ru": "Drink2Go",
-  "title-en": "Drink2Go",
-  "textFirst-ru": "Экзаменационный проект на HTML, CSS и JS",
-  "textFirst-en": "Exam project using HTML, CSS, and JS",
-  "textSecond-ru": "Экзаменационный учебный проект, разработан в рамках курса Frontend-разработчик от HTML Academy. Проект на реализацию страницы сайта согласно макету.",
-  "textSecond-en": "Exam training project developed as part of the 'Frontend Developer' course by HTML Academy. The project implements a website page according to the provided design.",
-  "deploy": "https://drink-to-go-training.netlify.app/",
-  "features": [
-    {
-      "name-ru": "Дата разработки",
-      "name-en": "Development date",
-      "description-ru": [
-        "Июль 2025"
-      ],
-      "description-en": [
-        "July 2025"
-      ]
-    },
-    {
-      "name-ru": "Страницы",
-      "name-en": "Pages",
-      "description-ru": [
-        "Главная"
-      ],
-      "description-en": [
-        "Main"
-      ]
-    },
-    {
-      "name-ru": "Функциональность",
-      "name-en": "Functionality",
-      "description-ru": [
-        "Адаптив под телефон, планшет и десктоп",
-        "Слайдер Swiper",
-        "Интерактивная карта Leaflet",
-        "Кастомные элементы формы и селект",
-        "Сборка и оптимизация через Gulp"
-      ],
-      "description-en": [
-        "Responsive layout for mobile, tablet, and desktop",
-        "Swiper slider",
-        "Interactive Leaflet map",
-        "Custom form elements and select",
-        "Build and optimization with Gulp"
-      ]
-    },
-    {
-      "name-ru": "Не реализовано",
-      "name-en": "Not Implemented",
-      "description-ru": [
-        "Внутренние страницы",
-        "Обработка данных и взаимодействие с пользователем",
-        "Получение ассортимента с сервера"
-      ],
-      "description-en": [
-        "Inner pages",
-        "Data processing and user interaction",
-        "Fetching products from server"
-      ]
-    }
-  ],
+  "image": "drink-to-go-preview.webp",
+  "date": "07.2025",
+  "complexity": "1",
+  "category": "training",
+  "deploy": "https:\/\/drink-to-go-training.netlify.app\/",
+  "title": {
+    "ru": "Drink2Go",
+    "en": "Drink2Go"
+  },
+  "textFirst": {
+    "ru": "Экзаменационный проект на HTML, CSS и JS",
+    "en": "Exam project using HTML, CSS, and JS"
+  },
+  "textSecond": {
+    "ru": "Экзаменационный учебный проект, разработан в рамках курса Frontend-разработчик от HTML Academy. Проект на реализацию страницы сайта согласно макету.",
+    "en": "Exam training project developed as part of the 'Frontend Developer' course by HTML Academy. The project implements a website page according to the provided design."
+  },
+  "functionality": {
+    "ru": [
+      "Адаптив под телефон, планшет и десктоп",
+      "Слайдер Swiper",
+      "Интерактивная карта Leaflet",
+      "Кастомные элементы формы и селект",
+      "Сборка и оптимизация через Gulp"
+    ],
+    "en": [
+      "Responsive layout for mobile, tablet, and desktop",
+      "Swiper slider",
+      "Interactive Leaflet map",
+      "Custom form elements and select",
+      "Build and optimization with Gulp"
+    ]
+  },
   "technologies": [
-    {
-      "name": "HTML",
-      "icon": "icon-html",
-      "link": "https://html.spec.whatwg.org/multipage/"
-    },
-    {
-      "name": "SCSS",
-      "icon": "icon-scss",
-      "link": "https://sass-scss.ru/"
-    },
-    {
-      "name": "JavaScript",
-      "icon": "icon-js",
-      "link": "https://ecma-international.org/publications-and-standards/standards/ecma-262/"
-    }
-  ]
+    "html",
+    "scss",
+    "javascript"
+  ],
+  "pages": {
+    "ru": [
+      "Главная"
+    ],
+    "en": [
+      "Main"
+    ]
+  },
+  "notImplemented": {
+    "ru": [
+      "Внутренние страницы",
+      "Обработка данных и взаимодействие с пользователем",
+      "Получение ассортимента с сервера"
+    ],
+    "en": [
+      "Inner pages",
+      "Data processing and user interaction",
+      "Fetching products from server"
+    ]
+  }
 }
