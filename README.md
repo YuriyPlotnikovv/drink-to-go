@@ -7,6 +7,6 @@
 * препроцессор Sass
 * сборка через Gulp
 ---
-Деплой проекта: https://drink-to-go-training.netlify.app/
+Деплой проекта: https://drink2go-training.yp-projects.ru/
 ---
 Экзаменационный проект в рамках курса Frontend-разработчик от HTML Academy
